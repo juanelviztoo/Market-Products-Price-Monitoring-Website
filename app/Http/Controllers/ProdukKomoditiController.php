@@ -27,6 +27,7 @@ class ProdukKomoditiController extends Controller
             'komoditi_id' => 'required',
             'nama_produk' => 'required',
             'gambar_produk' => 'nullable|image',
+            'satuan' => 'required|string',
         ]);
 
         if ($request->hasFile('gambar_produk')) {
@@ -40,6 +41,7 @@ class ProdukKomoditiController extends Controller
             'komoditi_id' => $request->komoditi_id,
             'nama_produk' => $request->nama_produk,
             'gambar_produk' => $gambar_produk,
+            'satuan' => $request->satuan,
         ]);
 
         return redirect()->route('produk_komoditi.index')->with('success', 'Produk Komoditi Created Successfully.');
@@ -68,9 +70,10 @@ class ProdukKomoditiController extends Controller
             'komoditi_id' => 'required',
             'nama_produk' => 'required',
             'gambar_produk' => 'nullable|image',
+            'satuan' => 'required|string',
         ]);
 
-        $data = $request->only(['komoditi_id', 'nama_produk']);
+        $data = $request->only(['komoditi_id', 'nama_produk', 'satuan']);
         if ($request->hasFile('gambar_produk')) {
             // Hapus gambar lama jika ada
             if ($produkKomoditi->gambar_produk) {

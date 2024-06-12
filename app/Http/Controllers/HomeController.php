@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kategori;
 use App\Models\RiwayatHargaKomoditi;
+use App\Models\ProdukKomoditi;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,7 @@ class HomeController extends Controller
         // Load categories with their commodities and price history, sorted by date
         $kategoris = Kategori::with(['komoditi.riwayatHargaKomoditi' => function($query) {
             $query->orderBy('tanggal_update', 'desc');
-        }])->get();
+        }, 'komoditi.produkKomoditi'])->get();
 
         // Prepare data for view
         $kategoris->each(function($kategori) {
@@ -51,6 +52,9 @@ class HomeController extends Controller
                     $statusIcon = 'fas fa-star';
                 }
 
+                // Mengambil satuan dari produk komoditi
+                $satuan = optional($komoditi->produkKomoditi->first())->satuan ?? '';
+
                 // Menyimpan hasil perhitungan dalam properti komoditi
                 $komoditi->latestAveragePrice = $latestAveragePrice;
                 $komoditi->priceDiff = $priceDiff;
@@ -58,6 +62,7 @@ class HomeController extends Controller
                 $komoditi->status = $status;
                 $komoditi->statusClass = $statusClass;
                 $komoditi->statusIcon = $statusIcon;
+                $komoditi->satuan = $satuan;
             });
         });
 

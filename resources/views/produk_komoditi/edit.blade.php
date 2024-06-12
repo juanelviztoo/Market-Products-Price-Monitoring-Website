@@ -25,6 +25,16 @@
             <img src="{{ asset('storage/gambar_produk/'.$produkKomoditi->gambar_produk) }}" alt="{{ $produkKomoditi->nama_produk }}" width="100">
             @endif
         </div>
+        <div class="mb-3">
+            <label for="satuan" class="form-label">Satuan</label>
+            <select name="satuan" class="form-control" id="satuan" required>
+                <option value="/Kg" {{ $produkKomoditi->satuan == '/Kg' ? 'selected' : '' }}>/Kg</option>
+                <option value="/Liter" {{ $produkKomoditi->satuan == '/Liter' ? 'selected' : '' }}>/Liter</option>
+                <option value="/Buah" {{ $produkKomoditi->satuan == '/Buah' ? 'selected' : '' }}>/Buah</option>
+                <option value="/Ikat" {{ $produkKomoditi->satuan == '/Ikat' ? 'selected' : '' }}>/Ikat</option>
+                <option value="/250Gr" {{ $produkKomoditi->satuan == '/250Gr' ? 'selected' : '' }}>/250Gr</option>
+            </select>
+        </div>
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>

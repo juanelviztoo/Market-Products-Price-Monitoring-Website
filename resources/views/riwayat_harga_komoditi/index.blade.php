@@ -23,7 +23,7 @@
                     <td>{{ $riwayat->komoditi->jenis_komoditi }}</td>
                     <td>{{ optional($riwayat->produkKomoditi)->nama_produk ?? 'N/A' }}</td>
                     <td>{{ $riwayat->tanggal_update }}</td>
-                    <td>Rp{{ number_format($riwayat->harga, 2, ',', '.') }}</td>
+                    <td>Rp{{ number_format($riwayat->harga, 2, ',', '.') }} {{ optional($riwayat->produkKomoditi)->satuan ?? '' }}</td>
                     <td>
                         @if($riwayat->status == 'Harga Naik')
                             <i class="fas fa-circle text-danger"></i> Harga Naik

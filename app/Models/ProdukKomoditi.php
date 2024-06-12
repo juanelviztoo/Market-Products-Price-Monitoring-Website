@@ -11,7 +11,7 @@ class ProdukKomoditi extends Model
 
     protected $table = 'produk_komoditi';
 
-    protected $fillable = ['komoditi_id', 'nama_produk', 'gambar_produk'];
+    protected $fillable = ['komoditi_id', 'nama_produk', 'gambar_produk', 'satuan'];
 
     public function komoditi()
     {

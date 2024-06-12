@@ -18,7 +18,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $komoditi->jenis_komoditi }}</h5>
                             <p class="card-text">Recent Price Averages: 
-                                Rp{{ number_format($komoditi->latestAveragePrice ?? 0, 2, ',', '.') }}
+                                Rp{{ number_format($komoditi->latestAveragePrice ?? 0, 2, ',', '.') }} {{ $komoditi->satuan }}
                             </p>
                             <p>
                                 @if($komoditi->latestAveragePrice !== null)
