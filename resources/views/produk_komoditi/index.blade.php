@@ -10,7 +10,6 @@
                 <th>Jenis Komoditi</th>
                 <th>Nama Produk</th>
                 <th>Gambar Produk</th>
-                <th>Satuan</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -24,7 +23,6 @@
                     <img src="{{ asset('storage/gambar_produk/'.$produk->gambar_produk) }}" alt="{{ $produk->nama_produk }}" width="100">
                     @endif
                 </td>
-                <td>{{ $produk->satuan }}</td>
                 <td>
                     <a href="{{ route('produk_komoditi.edit', $produk->id) }}" class="btn btn-warning">Edit</a>
                     <form action="{{ route('produk_komoditi.destroy', $produk->id) }}" method="POST" class="d-inline">

@@ -21,16 +21,6 @@
             <label for="gambar_produk" class="form-label">Gambar Produk</label>
             <input type="file" class="form-control" id="gambar_produk" name="gambar_produk">
         </div>
-        <div class="mb-3">
-            <label for="satuan" class="form-label">Satuan</label>
-            <select name="satuan" class="form-control" id="satuan" required>
-                <option value="/Kg">/Kg</option>
-                <option value="/Liter">/Liter</option>
-                <option value="/Buah">/Buah</option>
-                <option value="/Ikat">/Ikat</option>
-                <option value="/250Gr">/250Gr</option>
-            </select>
-        </div>
         <button type="submit" class="btn btn-primary">Tambahkan</button>
     </form>
 </div>

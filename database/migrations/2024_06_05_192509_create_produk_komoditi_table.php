@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignId('komoditi_id')->constrained('komoditi')->onDelete('cascade');
             $table->string('nama_produk', 80);
             $table->string('gambar_produk')->nullable();
-            $table->string('satuan', 10);
             $table->timestamps();
         });
     }

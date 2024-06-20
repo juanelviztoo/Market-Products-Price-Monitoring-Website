@@ -11,10 +11,7 @@ class RiwayatHargaKomoditi extends Model
 
     protected $table = 'riwayat_harga_komoditi';
 
-    protected $fillable = [
-        'pasar_id', 'komoditi_id', 'produk_komoditi_id',
-        'tanggal_update', 'harga', 'status'
-    ];
+    protected $fillable = ['pasar_id', 'komoditi_id', 'produk_komoditi_id', 'tanggal_update', 'harga', 'status'];
 
     public function pasar()
     {
